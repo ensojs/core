@@ -5,7 +5,7 @@
   "private": false,
   "author": "1a35e1 @1a35e1",
   "bin": {
-    "create-enso-app": "./bin/run"
+    "create-app": "./bin/run"
   },
   "dependencies": {
     "@oclif/command": "^1",
