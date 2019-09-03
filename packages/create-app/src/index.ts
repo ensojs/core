@@ -40,7 +40,7 @@ class EnsoJSCreateApp extends Command {
    * TODO: Support monorepo downloads
    */
   private downloadTarball (type: string, branch: string) {
-    const tarball = `https://github.com/ensojs/standalone-starter/tarball/${branch}`
+    const tarball = `https://github.com/ensojs/skeleton-install/tarball/${branch}`
     const archive = `enso.${type}.${branch}.tar`
     const cmd = `curl -sL ${tarball} > ${archive}`
 
