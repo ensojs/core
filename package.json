@@ -1,7 +1,7 @@
 {
   "name": "enso",
-  "private": true,
   "license": "MIT",
+  "private": true,
   "workspaces": [
     "packages/*"
   ],

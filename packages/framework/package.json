@@ -1,6 +1,7 @@
 {
   "name": "@ensojs/framework",
   "version": "0.8.0",
+  "private": false,
   "description": "Base packages for the Enso framework",
   "scripts": {
     "test": "DEBUG=* ts-node -r tsconfig-paths/register test/ApiServer.ts",
