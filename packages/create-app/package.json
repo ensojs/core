@@ -29,7 +29,7 @@
     "/bin",
     "/lib"
   ],
-  "homepage": "https://github.com/enso-ts/enso",
+  "homepage": "https://github.com/ensojs",
   "keywords": [
     "oclif"
   ],
@@ -38,7 +38,7 @@
   "oclif": {
     "bin": "create-enso-app"
   },
-  "repository": "enso-ts/enso",
+  "repository": "ensojs/core",
   "scripts": {
     "posttest": "tslint -p . -t stylish",
     "prepack": "rm -rf lib && tsc -b",
