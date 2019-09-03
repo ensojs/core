@@ -9,7 +9,6 @@ More information on how to create one can be found here:
 
 * https://github.com/8640p/tools/tree/master/packages/handle
 
-
 Additionaly strategies such as `[Blind Reviews](https://blog.zgp.org/blind-code-reviews-experiment/)` have been created to address [gender bias](https://blog.mozilla.org/blog/2018/03/08/gender-bias-code-reviews/).
 
 Additional reading:
