@@ -1,7 +1,7 @@
 {
   "name": "@ensojs/create-app",
   "description": "Utility for starting enso projects",
-  "version": "0.1.4",
+  "version": "0.2.0",
   "private": false,
   "author": "1a35e1 @1a35e1",
   "bin": {
@@ -38,7 +38,6 @@
   "oclif": {
     "bin": "create-enso-app"
   },
-  "repository": "ensojs/core",
   "scripts": {
     "posttest": "tslint -p . -t stylish",
     "prepack": "rm -rf lib && tsc -b",
