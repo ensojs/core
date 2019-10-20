@@ -6,7 +6,7 @@ const pkg = require('../package.json')
 
 class EnsoJSCreateApp extends Command {
 
-  static description = 'Create a greenfield Ensō project'
+  static description = 'Create/s a greenfield Ensō project'
 
   static args = [
     {
@@ -16,6 +16,17 @@ class EnsoJSCreateApp extends Command {
   ]
 
   static flags = {
+    // add --version flag to show CLI version
+    version: flags.version({char: 'v'}),
+    help: flags.help({char: 'h'}),
+    // flag with a value (-n, --name=VALUE)
+    name: flags.string({
+      char: 'n',
+      default: 'enso-app',
+      description: 'app name to print'
+    }),
+    // flag with no value (-f, --force)
+    force: flags.boolean({char: 'f'}),
     type: flags.string({
       required: true,
       char: 't',
@@ -28,9 +39,7 @@ class EnsoJSCreateApp extends Command {
       default: 'master',
       char: 'b',
       description: 'Default branch to download'
-    }),
-    force: flags.boolean({char: 'f'}),
-    version: flags.version({char: 'v'})
+    })
   }
 
   /**
@@ -40,6 +49,7 @@ class EnsoJSCreateApp extends Command {
    * TODO: Support monorepo downloads
    */
   private downloadTarball (type: string, branch: string) {
+    console.log('Downloading tarball...')
     const tarball = `https://github.com/ensojs/skeleton-install/tarball/${branch}`
     const archive = `enso.${type}.${branch}.tar`
     const cmd = `curl -sL ${tarball} > ${archive}`
@@ -83,13 +93,17 @@ class EnsoJSCreateApp extends Command {
     })
   }
 
-  async run () {
+  async run() {
     const {args, flags} = this.parse(EnsoJSCreateApp)
+
+    if (args.file && flags.force) {
+      this.log(`you input --force and --file: ${args.file}`)
+    }
 
     this.log(`Ensō installer (${pkg.version}) \n`)
 
     // download + install
-    const path  = `${process.cwd()}/${args.app}`
+    const path  = `${process.cwd()}/${flags.name}`
     const archive = this.downloadTarball(flags.type, flags.branch)
 
     this.createDirectory(path)

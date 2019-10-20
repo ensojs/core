@@ -2,7 +2,6 @@
   "name": "@ensojs/create-app",
   "description": "Utility for starting enso projects",
   "version": "0.2.0",
-  "private": false,
   "author": "1a35e1 @1a35e1",
   "bin": {
     "create-app": "./bin/run"
@@ -16,8 +15,14 @@
     "tslib": "^1"
   },
   "devDependencies": {
+    "@oclif/test": "^1",
     "@oclif/tslint": "^3",
+    "@types/chai": "^4",
+    "@types/mocha": "^5",
     "@types/node": "^10",
+    "chai": "^4",
+    "mocha": "^5",
+    "nyc": "^13",
     "ts-node": "^8",
     "tslint": "^5",
     "typescript": "^3.3"
@@ -36,12 +41,13 @@
   "license": "MIT",
   "main": "lib/index.js",
   "oclif": {
-    "bin": "create-enso-app"
+    "bin": "create-app"
   },
+  "private": false,
   "scripts": {
-    "posttest": "tslint -p . -t stylish",
+    "posttest": "tslint -p test -t stylish",
     "prepack": "rm -rf lib && tsc -b",
-    "test": "echo NO TESTS"
+    "test": "nyc --extension .ts mocha --forbid-only \"test/**/*.test.ts\""
   },
   "types": "lib/index.d.ts"
 }
