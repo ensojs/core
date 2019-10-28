@@ -1,5 +1,7 @@
 # Enso
 
+[![Join the chat at https://gitter.im/enso-js/community](https://badges.gitter.im/enso-js/community.svg)](https://gitter.im/enso-js/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 A Typescript framework for building services
 
 ## Docs
