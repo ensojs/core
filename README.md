@@ -2,7 +2,7 @@
 
 [![Join the chat at https://gitter.im/enso-js/community](https://badges.gitter.im/enso-js/community.svg)](https://gitter.im/enso-js/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-A Typescript framework for building services
+A Typescript framework for building backend services
 
 ## Docs
 
@@ -18,7 +18,7 @@ npx @ensojs/create-app && cd enso-app && yarn dev
 yarn create @ensojs/app && cd enso-app && yarn dev
 ```
 
-## Philospphy
+## Philosophy
 
 Enso seeks to create a balanced community that is informed by classical Software Architecture and Programming principles. i.e “Gang of Four” patterns such as Repository, Factories and Services and Adaptors and and modern product based approaches such as Domain Driven Design.
 
