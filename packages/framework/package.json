@@ -19,7 +19,7 @@
   "types": "dist/index.d.ts",
   "license": "MIT",
   "dependencies": {
-    "@koa/cors": "^2.2.2",
+    "@koa/cors": "^3.0.0",
     "class-validator": "^0.10.0",
     "debug": "^4.1.0",
     "dotenv-safe": "^6.0.0",
