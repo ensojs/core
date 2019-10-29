@@ -22,7 +22,7 @@
     "@koa/cors": "^2.2.2",
     "class-validator": "^0.10.0",
     "debug": "^4.1.0",
-    "dotenv-safe": "^6.0.0",
+    "dotenv-safe": "^8.0.0",
     "http": "^0.0.0",
     "inversify": "^5.0.1",
     "inversify-koa": "^1.0.3",
