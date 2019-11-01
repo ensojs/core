@@ -8,11 +8,11 @@
     "build": "rm -rf dist && tsc -b tsconfig.release.json"
   },
   "keywords": [
-    "framework",
-    "typescript",
-    "javascript",
     "nodejs",
-    "nodejs-framework"
+    "typescript",
+    "dependency-injection",
+    "nodejs",
+    "inversifyjs"
   ],
   "author": "1a35e1@protonmail.com",
   "main": "dist/index.js",
