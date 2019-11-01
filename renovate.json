@@ -1,5 +1,16 @@
 {
   "extends": [
     "config:base"
-  ]
+  ],
+  "semanticCommits": true,
+  "stabilityDays": 10,
+  "major": {
+    "automerge": false
+  },
+  "minor": {
+    "automerge": true
+  },
+  "patch": {
+    "automerge": true
+  }
 }
