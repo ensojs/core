@@ -1,7 +1,7 @@
 {
   "name": "@ensojs/create-app",
   "description": "Utility for starting enso projects",
-  "version": "0.2.2",
+  "version": "0.7.0",
   "author": "1a35e1 @1a35e1",
   "bin": {
     "create-app": "./bin/run"

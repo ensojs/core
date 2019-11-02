@@ -8,8 +8,7 @@ CLI for the Enso framework
 [![License](https://img.shields.io/npm/l/@ensojs/cli.svg)](https://github.com/1a35e1/cli/blob/master/package.json)
 
 <!-- toc -->
-* [Usage](#usage)
-* [Commands](#commands)
+* [@ensojs/cli](#ensojscli)
 <!-- tocstop -->
 
 ## Usage
@@ -20,7 +19,7 @@ $ npm install -g @ensojs/cli
 $ enso COMMAND
 running command...
 $ enso (-v|--version|version)
-@ensojs/cli/0.0.0 darwin-x64 node-v10.15.3
+@ensojs/cli/0.7.0 darwin-x64 node-v13.0.1
 $ enso --help [COMMAND]
 USAGE
   $ enso COMMAND
@@ -37,7 +36,7 @@ USAGE
 
 describe the command here
 
-```bash
+```
 USAGE
   $ enso hello [FILE]
 
@@ -51,7 +50,7 @@ EXAMPLE
   hello world from ./src/hello.ts!
 ```
 
-_See code: [src/commands/hello.ts](https://github.com/1a35e1/cli/blob/v0.0.0/src/commands/hello.ts)_
+_See code: [src/commands/hello.ts](https://github.com/1a35e1/cli/blob/v0.7.0/src/commands/hello.ts)_
 
 ## `enso help [COMMAND]`
 
@@ -68,5 +67,5 @@ OPTIONS
   --all  see all commands in CLI
 ```
 
-_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.2.0/src/commands/help.ts)_
+_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.2.1/src/commands/help.ts)_
 <!-- commandsstop -->
