@@ -19,7 +19,7 @@ $ npm install -g @ensojs/cli
 $ enso COMMAND
 running command...
 $ enso (-v|--version|version)
-@ensojs/cli/0.7.0 darwin-x64 node-v13.0.1
+@ensojs/cli/0.7.1 darwin-x64 node-v13.0.1
 $ enso --help [COMMAND]
 USAGE
   $ enso COMMAND
@@ -50,7 +50,7 @@ EXAMPLE
   hello world from ./src/hello.ts!
 ```
 
-_See code: [src/commands/hello.ts](https://github.com/1a35e1/cli/blob/v0.7.0/src/commands/hello.ts)_
+_See code: [src/commands/hello.ts](https://github.com/1a35e1/cli/blob/v0.7.1/src/commands/hello.ts)_
 
 ## `enso help [COMMAND]`
 

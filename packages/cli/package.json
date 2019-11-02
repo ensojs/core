@@ -1,7 +1,8 @@
 {
   "name": "@ensojs/cli",
+  "private": false,
   "description": "CLI for the Enso framework",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "author": "1a35e1@protonmail.com",
   "bin": {
     "enso": "./bin/run"
