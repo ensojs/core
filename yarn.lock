@@ -4486,9 +4486,9 @@ koa@^2.3.0:
     vary "^1.1.2"
 
 koa@^2.5.3:
-  version "2.10.0"
-  resolved "https://registry.yarnpkg.com/koa/-/koa-2.10.0.tgz#86a583ff280896dce3a36b0b6dae80f9559240d3"
-  integrity sha512-vcZopGEWHDokchYtjU6jF1BCy+2MA2hnvGP7xPi26qWoIS0OiAUb4+lCqkqf05qG5ULnGYUFTvFnSK9RyOoiKw==
+  version "2.11.0"
+  resolved "https://registry.yarnpkg.com/koa/-/koa-2.11.0.tgz#fe5a51c46f566d27632dd5dc8fd5d7dd44f935a4"
+  integrity sha512-EpR9dElBTDlaDgyhDMiLkXrPwp6ZqgAIBvhhmxQ9XN4TFgW+gEz6tkcsNI6BnUbUftrKDjVFj4lW2/J2aNBMMA==
   dependencies:
     accepts "^1.3.5"
     cache-content-type "^1.0.0"
@@ -4508,7 +4508,6 @@ koa@^2.5.3:
     is-generator-function "^1.0.7"
     koa-compose "^4.1.0"
     koa-convert "^1.2.0"
-    koa-is-json "^1.0.0"
     on-finished "^2.3.0"
     only "~0.0.2"
     parseurl "^1.3.2"
