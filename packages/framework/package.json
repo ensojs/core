@@ -20,7 +20,7 @@
   "license": "MIT",
   "dependencies": {
     "@koa/cors": "^3.0.0",
-    "class-validator": "^0.10.0",
+    "class-validator": "^0.11.0",
     "debug": "^4.1.0",
     "dotenv-safe": "^8.0.0",
     "http": "^0.0.0",
