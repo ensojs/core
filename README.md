@@ -4,11 +4,11 @@
 
 A Typescript framework for building backend services
 
-## Docs
+## Documentation
 
-Work in progress — <https://ensojs.netlify.com/>
+[https://ensojs.netlify.com/](<https://ensojs.netlify.com/>)
 
-## Install
+## Get started ()
 
 ```bash
 # via npx
@@ -18,8 +18,11 @@ npx @ensojs/create-app && cd enso-app && yarn dev
 yarn create @ensojs/app && cd enso-app && yarn dev
 ```
 
+Move info [here](https://ensojs.netlify.com/installation/quickstart.html)
+
 ## Philosophy
 
-Enso seeks to create a balanced community that is informed by classical Software Architecture and Programming principles. i.e “Gang of Four” patterns such as Repository, Factories and Services and Adaptors and and modern product based approaches such as Domain Driven Design.
+Enso seeks to create a balanced respectful community informed by classical Software Architecture and Programming principles. eg. `Gang of Four` patterns such as Repositories, Factories and et. al in addition to modern `"enterprise"` approaches such as Domain Driven Design.
 
-We aim to create, develop technology that is well designed and thought through. We also openly acknowledge and give credit to the developers work we leverage.
+- We aim to create, develop technology that is well designed and thought through
+- We also openly acknowledge and give credit to the developers work we leverage
