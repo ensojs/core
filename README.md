@@ -26,3 +26,4 @@ Enso seeks to create a balanced respectful community informed by classical Softw
 
 - We aim to create, develop technology that is well designed and thought through
 - We also [openly acknowledge and give credit](CREDITS.md) to the developers work we leverage
+- Also please feel free to checkout the package [imprint])(<https://ensojs.netlify.com/installation/packages.html>)
