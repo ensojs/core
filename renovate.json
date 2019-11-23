@@ -3,7 +3,7 @@
     "config:base"
   ],
   "semanticCommits": true,
-  "stabilityDays": 10,
+  "stabilityDays": 3,
   "major": {
     "automerge": false
   },
