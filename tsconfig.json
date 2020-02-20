@@ -1,5 +1,9 @@
 {
   "compilerOptions": {
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitReturns": true,
+    "strict": true,
+    "noUnusedLocals": true,
     "allowSyntheticDefaultImports": true,
     "allowUnreachableCode": false,
     "alwaysStrict": true,
@@ -8,24 +12,26 @@
     "esModuleInterop": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "forceConsistentCasingInFileNames": true,
     "importHelpers": true,
     "jsx": "react",
-    "lib": ["es6"],
+    "lib": [
+      "es6"
+    ],
     "moduleResolution": "node",
     "noFallthroughCasesInSwitch": true,
     "noImplicitAny": true,
-    "noImplicitReturns": true,
     "noImplicitThis": true,
     "noLib": false,
-    "noUnusedLocals": true,
     "pretty": true,
     "removeComments": true,
     "sourceMap": false,
-    "strict": true,
     "strictNullChecks": true,
     "suppressImplicitAnyIndexErrors": true,
     "target": "es5"
   },
-  "exclude": ["dist", "node_modules", "**/*.spec.ts"]
+  "exclude": [
+    "dist",
+    "node_modules",
+    "**/*.spec.ts"
+  ]
 }
