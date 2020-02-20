@@ -1,18 +1,33 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
-    "target": "es5",
-    "declaration": true,
-    "noImplicitAny": false,
-    "noLib": false,
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitReturns": true,
+    "strict": true,
+    "noUnusedLocals": true,
+    "allowSyntheticDefaultImports": true,
+    "allowUnreachableCode": false,
     "alwaysStrict": true,
+    "declaration": true,
+    "downlevelIteration": true,
+    "esModuleInterop": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "esModuleInterop": true,
-    "sourceMap": false,
+    "importHelpers": true,
+    "jsx": "react",
     "lib": [
       "es6"
-    ]
+    ],
+    "moduleResolution": "node",
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "noLib": false,
+    "pretty": true,
+    "removeComments": true,
+    "sourceMap": false,
+    "strictNullChecks": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "target": "es5"
   },
   "exclude": [
     "dist",
