@@ -7,10 +7,15 @@
   ],
   "scripts": {
     "clean": "bash scripts/clean.sh",
-    "packages:lint": "yarn manypkg check",
-    "packages:fix": "yarn manypkg fix"
+    "pkgs:lint": "yarn manypkg check",
+    "pkgs:fix": "yarn manypkg fix",
+    "pkgs:build": "yarn preconstruct build "
   },
   "dependencies": {
+    "@babel/cli": "7.8.4",
+    "@babel/core": "7.8.7",
+    "@babel/plugin-proposal-class-properties": "7.8.3",
+    "@babel/preset-typescript": "7.8.3",
     "@manypkg/cli": "0.11.1",
     "@preconstruct/cli": "1.1.8",
     "bolt": "0.24.5",

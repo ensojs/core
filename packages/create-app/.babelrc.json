@@ -1,0 +1,6 @@
+{
+  "extends": "../../babel.config.json",
+  "plugins": [
+    "@babel/plugin-proposal-class-properties"
+  ]
+}
