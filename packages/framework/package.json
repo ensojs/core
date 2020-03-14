@@ -36,7 +36,7 @@
     "morgan": "^1.9.1",
     "pg": "^7.4.3",
     "supertest": "^4.0.2",
-    "tslib": "^1.9.3",
+    "tslib": "1.10.0",
     "typeorm": "^0.2.17"
   },
   "devDependencies": {
@@ -52,7 +52,7 @@
     "reflect-metadata": "0.1.13",
     "ts-node": "8.6.2",
     "tsconfig-paths": "3.8.0",
-    "tslib": "1.10.0"
+    "typescript": "3.7.2"
   },
   "peerDependencies": {
     "typescript": "^3.5.1"

@@ -8,9 +8,13 @@
   "scripts": {
     "postinstall": "lerna bootstrap",
     "clean": "bash scripts/clean.sh",
+    "packages:lint": "yarn manypkg check",
+    "packages:fix": "yarn manypkg fix",
     "build": "lerna run build"
   },
-  "devDependencies": {
+  "dependencies": {
+    "@manypkg/cli": "0.11.1",
+    "bolt": "0.24.5",
     "lerna": "3.19.0",
     "typescript": "3.7.2"
   }
