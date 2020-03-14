@@ -15,7 +15,8 @@
     "inversifyjs"
   ],
   "author": "1a35e1@protonmail.com",
-  "main": "dist/index.js",
+  "main": "dist/framework.cjs.js",
+  "module": "dist/framework.esm.js",
   "types": "dist/index.d.ts",
   "license": "MIT",
   "dependencies": {

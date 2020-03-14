@@ -32,14 +32,16 @@
   },
   "files": [
     "/bin",
-    "/lib"
+    "/lib",
+    "/dist"
   ],
   "homepage": "https://github.com/ensojs",
   "keywords": [
     "oclif"
   ],
   "license": "MIT",
-  "main": "lib/index.js",
+  "main": "dist/create-app.cjs.js",
+  "module": "dist/create-app.esm.js",
   "oclif": {
     "bin": "create-app"
   },

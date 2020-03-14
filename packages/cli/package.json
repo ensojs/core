@@ -29,6 +29,7 @@
   "files": [
     "/bin",
     "/lib",
+    "/dist",
     "/npm-shrinkwrap.json",
     "/oclif.manifest.json"
   ],
@@ -37,7 +38,8 @@
     "oclif"
   ],
   "license": "MIT",
-  "main": "lib/index.js",
+  "main": "dist/cli.cjs.js",
+  "module": "dist/cli.esm.js",
   "oclif": {
     "commands": "./lib/commands",
     "bin": "enso",
