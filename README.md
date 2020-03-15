@@ -8,7 +8,7 @@ A Typescript framework for building backend services
 
 [https://ensojs.netlify.com/](https://ensojs.netlify.com/)
 
-## Get started ()
+## Get started
 
 ```bash
 # via npx

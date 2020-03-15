@@ -19,7 +19,7 @@ $ npm install -g @ensojs/cli
 $ enso COMMAND
 running command...
 $ enso (-v|--version|version)
-@ensojs/cli/0.7.2 darwin-x64 node-v13.0.1
+@ensojs/cli/0.7.5 darwin-x64 node-v12.16.1
 $ enso --help [COMMAND]
 USAGE
   $ enso COMMAND
@@ -29,8 +29,29 @@ USAGE
 ## Commands
 
 <!-- commands -->
+* [`enso goodbye [FILE]`](#enso-goodbye-file)
 * [`enso hello [FILE]`](#enso-hello-file)
 * [`enso help [COMMAND]`](#enso-help-command)
+
+## `enso goodbye [FILE]`
+
+describe the command here
+
+```
+USAGE
+  $ enso goodbye [FILE]
+
+OPTIONS
+  -f, --force
+  -h, --help       show CLI help
+  -n, --name=name  name to print
+
+EXAMPLE
+  $ enso goodbye
+  Caio world from ./src/goodbye.ts!
+```
+
+_See code: [src/commands/goodbye.ts](https://github.com/1a35e1/cli/blob/v0.7.5/src/commands/goodbye.ts)_
 
 ## `enso hello [FILE]`
 
@@ -50,7 +71,7 @@ EXAMPLE
   hello world from ./src/hello.ts!
 ```
 
-_See code: [src/commands/hello.ts](https://github.com/1a35e1/cli/blob/v0.7.2/src/commands/hello.ts)_
+_See code: [src/commands/hello.ts](https://github.com/1a35e1/cli/blob/v0.7.5/src/commands/hello.ts)_
 
 ## `enso help [COMMAND]`
 

@@ -1,7 +1,7 @@
 //
 export * from './env'
-export * from './http-server'
-export * from './test'
+export * from './server'
+export * from './testing'
 
 // TODO: export vendor utility files under a nicer namespace
 // eg. @enso/bindings

@@ -1,10 +1,10 @@
-import {Command, flags} from '@oclif/command'
+import { Command, flags } from '@oclif/command'
 import { execSync, spawnSync } from 'child_process'
 import * as fs from 'fs-extra'
 
 const pkg = require('../package.json')
 
-class EnsoJSCreateApp extends Command {
+export class EnsoJSCreateApp extends Command {
 
   static description = 'Create/s a greenfield Ensō project'
 
@@ -17,8 +17,8 @@ class EnsoJSCreateApp extends Command {
 
   static flags = {
     // add --version flag to show CLI version
-    version: flags.version({char: 'v'}),
-    help: flags.help({char: 'h'}),
+    version: flags.version({ char: 'v' }),
+    help: flags.help({ char: 'h' }),
     // flag with a value (-n, --name=VALUE)
     name: flags.string({
       char: 'n',
@@ -26,7 +26,7 @@ class EnsoJSCreateApp extends Command {
       description: 'app name to print'
     }),
     // flag with no value (-f, --force)
-    force: flags.boolean({char: 'f'}),
+    force: flags.boolean({ char: 'f' }),
     type: flags.string({
       required: true,
       char: 't',
@@ -48,7 +48,7 @@ class EnsoJSCreateApp extends Command {
    *
    * TODO: Support monorepo downloads
    */
-  private downloadTarball (type: string, branch: string) {
+  private downloadTarball(type: string, branch: string) {
     console.log('Downloading tarball...')
     const tarball = `https://github.com/ensojs/skeleton-install/tarball/${branch}`
     const archive = `enso.${type}.${branch}.tar`
@@ -60,7 +60,7 @@ class EnsoJSCreateApp extends Command {
     return archive
   }
 
-  private createDirectory (path: string) {
+  private createDirectory(path: string) {
     if (!fs.pathExistsSync(path)) {
       fs.ensureDirSync(path)
     } else {
@@ -71,22 +71,22 @@ class EnsoJSCreateApp extends Command {
   /**
    * Extract tarball to app dir
    */
-  private async extractArchive (type: string, branch: string, path: string) {
+  private async extractArchive(type: string, branch: string, path: string) {
     const cmd = `tar xf enso.${type}.${branch}.tar -C ${path} --strip-components=1`
     this.log(`=> Installing [${path}]`)
     return execSync(cmd)
   }
 
-  private cleanup (archive: string) {
+  private cleanup(archive: string) {
     fs.unlink(archive)
   }
 
-  private async setupEnvironment (path: string) {
+  private async setupEnvironment(path: string) {
     this.log(`=> Setting up environment`)
     await fs.copyFile(`${path}/.env.example`, `${path}/.env`)
   }
 
-  private async installDependencies (path: string) {
+  private async installDependencies(path: string) {
     spawnSync('yarn', {
       cwd: path,
       stdio: 'inherit'
@@ -94,7 +94,7 @@ class EnsoJSCreateApp extends Command {
   }
 
   async run() {
-    const {args, flags} = this.parse(EnsoJSCreateApp)
+    const { args, flags } = this.parse(EnsoJSCreateApp)
 
     if (args.file && flags.force) {
       this.log(`you input --force and --file: ${args.file}`)
@@ -103,7 +103,7 @@ class EnsoJSCreateApp extends Command {
     this.log(`Ensō installer (${pkg.version}) \n`)
 
     // download + install
-    const path  = `${process.cwd()}/${flags.name}`
+    const path = `${process.cwd()}/${flags.name}`
     const archive = this.downloadTarball(flags.type, flags.branch)
 
     this.createDirectory(path)
@@ -118,5 +118,3 @@ class EnsoJSCreateApp extends Command {
     this.log(`=> Done`)
   }
 }
-
-export = EnsoJSCreateApp

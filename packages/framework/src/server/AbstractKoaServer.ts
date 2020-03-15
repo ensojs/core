@@ -10,20 +10,21 @@ import { PostgresConnectionCredentialsOptions } from 'typeorm/driver/postgres/Po
 import { IEnvironmentConfig } from '../env'
 import { TYPE } from '../bindings'
 
-const debug = Debug('enso:HTTPServer')
+const debug = Debug('enso:AbstractKoaServer')
 
-export abstract class HTTPServer {
+export abstract class AbstractKoaServer {
 
   /**
    * Instance of Koa
    */
-  koa: Koa
+  koa: Koa | undefined
 
-  connection: Connection
 
-  server: Server
+  connection: Connection | undefined
 
-  container: Container
+  server: Server | undefined
+
+  container: Container | undefined
 
   connectionOptions?: ConnectionOptions | PostgresConnectionCredentialsOptions
 
@@ -90,7 +91,7 @@ export abstract class HTTPServer {
   }
 
   /**
-   * Return an instance of the IoC container
+   * Return an instance of a container
    */
   getInjectionContainer (): Container {
     return this.container
