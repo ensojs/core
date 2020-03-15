@@ -1,7 +1,7 @@
 {
   "name": "enso",
   "license": "MIT",
-  "private": true,
+  "private": false,
   "workspaces": [
     "packages/*"
   ],
@@ -11,7 +11,7 @@
     "pkgs:fix": "yarn manypkg fix",
     "pkgs:build": "yarn preconstruct build",
     "changes": "yarn changeset",
-    "release": "yarn changeset release"
+    "publish": "yarn changeset publish"
   },
   "dependencies": {
     "@babel/cli": "7.8.4",
