@@ -1,7 +1,6 @@
 {
   "name": "@ensojs/framework",
   "version": "0.9.5",
-  "private": false,
   "description": "Base packages for the Enso framework",
   "scripts": {
     "test": "DEBUG=* ts-node -r tsconfig-paths/register test/ApiServer.ts",
@@ -14,6 +13,10 @@
     "nodejs",
     "inversifyjs"
   ],
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "author": "1a35e1@protonmail.com",
   "main": "dist/framework.cjs.js",
   "module": "dist/framework.esm.js",

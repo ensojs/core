@@ -6,6 +6,10 @@
   "bin": {
     "create-app": "./bin/run"
   },
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "@oclif/command": "^1",
     "@oclif/config": "^1",
@@ -45,7 +49,6 @@
   "oclif": {
     "bin": "create-app"
   },
-  "private": false,
   "scripts": {
     "posttest": "tslint -p test -t stylish",
     "prepack": "rm -rf lib && tsc -b",
