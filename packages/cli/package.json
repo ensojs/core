@@ -2,7 +2,7 @@
   "name": "@ensojs/cli",
   "private": false,
   "description": "CLI for the Enso framework",
-  "version": "0.7.2",
+  "version": "0.7.4",
   "author": "1a35e1@protonmail.com",
   "bin": {
     "enso": "./bin/run"
@@ -12,7 +12,7 @@
     "@oclif/command": "^1",
     "@oclif/config": "^1",
     "@oclif/plugin-help": "^2",
-    "tslib": "^1"
+    "tslib": "1.10.0"
   },
   "devDependencies": {
     "@oclif/dev-cli": "1.22.2",
@@ -29,6 +29,7 @@
   "files": [
     "/bin",
     "/lib",
+    "/dist",
     "/npm-shrinkwrap.json",
     "/oclif.manifest.json"
   ],
@@ -37,7 +38,8 @@
     "oclif"
   ],
   "license": "MIT",
-  "main": "lib/index.js",
+  "main": "dist/cli.cjs.js",
+  "module": "dist/cli.esm.js",
   "oclif": {
     "commands": "./lib/commands",
     "bin": "enso",

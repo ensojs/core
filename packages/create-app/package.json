@@ -1,7 +1,7 @@
 {
   "name": "@ensojs/create-app",
   "description": "Utility for starting enso projects",
-  "version": "0.8.0",
+  "version": "0.8.2",
   "author": "1a35e1 @1a35e1",
   "bin": {
     "create-app": "./bin/run"
@@ -12,7 +12,7 @@
     "@oclif/plugin-help": "^2",
     "@types/fs-extra": "^8.0.0",
     "fs-extra": "^8.0.1",
-    "tslib": "^1"
+    "tslib": "1.10.0"
   },
   "devDependencies": {
     "@oclif/test": "1.2.5",
@@ -32,14 +32,16 @@
   },
   "files": [
     "/bin",
-    "/lib"
+    "/lib",
+    "/dist"
   ],
   "homepage": "https://github.com/ensojs",
   "keywords": [
     "oclif"
   ],
   "license": "MIT",
-  "main": "lib/index.js",
+  "main": "dist/create-app.cjs.js",
+  "module": "dist/create-app.esm.js",
   "oclif": {
     "bin": "create-app"
   },
