@@ -37,7 +37,7 @@
     "morgan": "^1.9.1",
     "pg": "^7.4.3",
     "supertest": "^4.0.2",
-    "tslib": "1.10.0",
+    "tslib": "1.11.1",
     "typeorm": "^0.2.17"
   },
   "devDependencies": {
