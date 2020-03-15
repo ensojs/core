@@ -1,6 +1,6 @@
 {
   "name": "@ensojs/framework",
-  "version": "0.9.2",
+  "version": "0.9.4",
   "private": false,
   "description": "Base packages for the Enso framework",
   "scripts": {
