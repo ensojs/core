@@ -2,7 +2,7 @@ import { default as supertest, SuperTest, Test } from 'supertest'
 import { Connection, createConnection, getConnectionOptions, ConnectionOptions } from 'typeorm'
 import Debug from 'debug'
 
-import { HTTPServer } from '../http-server/HTTPServer'
+import { AbstractServer } from '../server/AbstractKoaServer'
 
 const debug = Debug('enso:TestHarness')
 
@@ -20,19 +20,21 @@ const configureTestConnection = (databaseOptions: ConnectionOptions) => ({
 
 export class TestHarness {
 
-  request: SuperTest<Test>
+  request: SuperTest<Test> | undefined
 
-  rootConnection: Connection
+  rootConnection: Connection | undefined
 
-  testConnection: Connection
+  testConnection: Connection | undefined
 
   testDatabase: string
+  // List of tokens used to interfaced with the API
+  | undefined
 
   // List of tokens used to interfaced with the API
   tokens = []
 
   constructor (
-    public app: HTTPServer,  // TODO: Ensure that App is an instance of ServerAbstract
+    public app: AbstractServer,  // TODO: Ensure that App is an instance of ServerAbstract
     public connectionName: string = 'root-connection'
   ) {}
 
