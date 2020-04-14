@@ -18,6 +18,14 @@ yarn create @ensojs/app && cd enso-app && yarn dev
 
 Move info [here](https://ensojs.netlify.com/installation/quickstart.html)
 
+## Contributing
+
+We use [changesets](https://github.com/atlassian/changesets) to coordinate releases.
+
+1. Fork the repository
+2. Create a branch with the relevant converntional changelog prefix. eg `feat/your-branch`, `fix/your-branch` etc. Check which [prefixes are enabled](./package.json).
+
+
 ## Philosophy
 
 Enso seeks to create a balanced respectful community informed by classical Software Architecture and Programming principles. eg. `Gang of Four` patterns such as Repositories, Factories and et. al in addition to modern `"enterprise"` approaches such as Domain Driven Design.
