@@ -1,5 +1,14 @@
 # @ensojs/framework
 
+## 0.10.0
+
+### Minor Changes
+
+- 9454604: - Strip down `AbstractKoaServer`
+  - Strip down `TestHarness`
+  - Use latest version of `ts-jest`
+  - Add some basic tests for @enso/api
+
 ## 0.9.5
 
 ### Patch Changes

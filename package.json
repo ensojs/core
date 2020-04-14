@@ -34,6 +34,7 @@
     "pkgs:fix": "yarn manypkg fix",
     "pkgs:build": "yarn preconstruct build",
     "changes": "yarn changeset",
+    "version": "yarn changeset version",
     "publish": "yarn changeset publish"
   },
   "dependencies": {
@@ -45,18 +46,15 @@
     "@manypkg/cli": "0.11.1",
     "@preconstruct/cli": "1.1.8",
     "bolt": "0.24.5",
-    "typescript": "3.7.2"
+    "cz-conventional-changelog": "3.1.0",
+    "husky": "4.2.3",
+    "typescript": "3.7.2",
+    "validate-commit-msg": "2.14.0"
   },
   "preconstruct": {
     "packages": [
       "packages/*"
     ]
-  },
-  "version": "0.0.0",
-  "devDependencies": {
-    "cz-conventional-changelog": "3.1.0",
-    "husky": "4.2.3",
-    "validate-commit-msg": "2.14.0"
   },
   "config": {
     "commitizen": {
@@ -67,5 +65,6 @@
     "hooks": {
       "commit-msg": "validate-commit-msg"
     }
-  }
+  },
+  "version": "0.0.0"
 }
