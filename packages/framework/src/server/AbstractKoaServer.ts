@@ -2,11 +2,10 @@ import Koa from 'koa'
 import http from 'http'
 import { Container } from 'inversify'
 import { InversifyKoaServer } from 'inversify-koa'
-import { Connection, ConnectionOptions, createConnection } from 'typeorm'
+import { Connection } from 'typeorm'
 import { Server } from 'http'
 import Debug from 'debug'
 
-import { PostgresConnectionCredentialsOptions } from 'typeorm/driver/postgres/PostgresConnectionCredentialsOptions'
 import { IEnvironmentConfig } from '../env'
 import { TYPE } from '../bindings'
 
@@ -14,39 +13,24 @@ const debug = Debug('enso:AbstractKoaServer')
 
 export abstract class AbstractKoaServer {
 
-  /**
-   * Instance of Koa
-   */
   koa: Koa | undefined
-
-
-  connection: Connection | undefined
 
   server: Server | undefined
 
   container: Container | undefined
 
-  connectionOptions?: ConnectionOptions | PostgresConnectionCredentialsOptions
-
-  /**
-   * Server is ready to be started
-   */
-  isReady: boolean = false
+  connections: Connection[] = []
 
   constructor (
     public env: IEnvironmentConfig
   ) {}
 
   /**
-   * Force the User to define how middleware is implemented
-   *
-   * @param koa
-   * @param container
+   * Force middleware to be declared
    */
   abstract applyMiddleware (koa: Koa, container: Container): void
 
-
-  listBindings (bindings) {
+  private listBindings (bindings: any) {
     for (const index in bindings) {
       if (bindings.hasOwnProperty(index)) {
         const _binding = bindings[index]
@@ -55,9 +39,7 @@ export abstract class AbstractKoaServer {
     }
   }
 
-  private async initialiseKoa (container: Container): Promise<Koa> {
-    const koa = new InversifyKoaServer(container)
-
+  private listRegisteredBindings(container: Container): void {
     debug(`listRegisteredControllers()`)
     try {
       this.listBindings(container.getAll(TYPE.Controller))
@@ -71,43 +53,46 @@ export abstract class AbstractKoaServer {
     } catch {
       debug(' => No web sockets registered')
     }
+  }
 
+  async build (container: Container): Promise<Koa> {
+
+    this.listRegisteredBindings(container)
+
+    const koa = new InversifyKoaServer(container)
+
+    // TODO: FIX TYPINGS
+    // @ts-ignore
     koa.setConfig(koa => this.applyMiddleware(koa, container))
-    return koa.build()
-  }
+    // @ts-ignore
+    this.koa = koa.build()
 
-  async initiateDatabaseConnection (connectionOptions: ConnectionOptions): Promise<Connection> {
-    this.connection = await createConnection({
-      ...connectionOptions
-      // logging: false
-    })
-    return this.connection
-  }
-
-  async build (container: Container): Promise<void> {
-    // koa
-    this.koa = await this.initialiseKoa(container)
-    this.isReady = true
+    if (!this.koa) throw new Error('Unable to build Koa')
+    return this.koa
   }
 
   /**
    * Return an instance of a container
    */
-  getInjectionContainer (): Container {
+  public getInjectionContainer (): Container {
+    if (!this.container) throw new Error('No container supplied')
     return this.container
   }
 
-  async start (): Promise<http.Server> {
+  public async start (): Promise<http.Server> {
+    if (!this.koa) throw new Error('Unable to start. Koa has not been built.')
     this.server = await this.koa.listen(this.env.PORT)
     return this.server
   }
 
-  async stop () {
+  public async stop () {
+    // Gracefully close any open connections
+    if (this.connections.length > 0) {
+      this.connections.map(o =>o.close())
+    }
+    // TODO: Gracefully shutdown the server
     if (this.server) {
       this.server.close()
-    }
-    if (this.connection) {
-      this.connection.close()
     }
   }
 }

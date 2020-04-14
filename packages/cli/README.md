@@ -1,92 +1,23 @@
-# @ensojs/cli
+# CLI
 
-CLI for the Enso framework
+TODO: Move this to its own repo
 
-[![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
-[![Version](https://img.shields.io/npm/v/@ensojs/cli.svg)](https://npmjs.org/package/@ensojs/cli)
-[![Downloads/week](https://img.shields.io/npm/dw/@ensojs/cli.svg)](https://npmjs.org/package/@ensojs/cli)
-[![License](https://img.shields.io/npm/l/@ensojs/cli.svg)](https://github.com/1a35e1/cli/blob/master/package.json)
+Sketch out cli interface
 
-<!-- toc -->
-* [@ensojs/cli](#ensojscli)
-<!-- tocstop -->
+Helper to register Inversify bindings
 
-## Usage
-
-<!-- usage -->
-```sh-session
-$ npm install -g @ensojs/cli
-$ enso COMMAND
-running command...
-$ enso (-v|--version|version)
-@ensojs/cli/0.7.5 darwin-x64 node-v12.16.1
-$ enso --help [COMMAND]
-USAGE
-  $ enso COMMAND
-...
-```
-<!-- usagestop -->
-## Commands
-
-<!-- commands -->
-* [`enso goodbye [FILE]`](#enso-goodbye-file)
-* [`enso hello [FILE]`](#enso-hello-file)
-* [`enso help [COMMAND]`](#enso-help-command)
-
-## `enso goodbye [FILE]`
-
-describe the command here
-
-```
-USAGE
-  $ enso goodbye [FILE]
-
-OPTIONS
-  -f, --force
-  -h, --help       show CLI help
-  -n, --name=name  name to print
-
-EXAMPLE
-  $ enso goodbye
-  Caio world from ./src/goodbye.ts!
+```bash
+enso register [controller|entity|factory|service] -d [domain] -t [http|websocket]
 ```
 
-_See code: [src/commands/goodbye.ts](https://github.com/1a35e1/cli/blob/v0.7.5/src/commands/goodbye.ts)_
-
-## `enso hello [FILE]`
-
-describe the command here
-
-```
-USAGE
-  $ enso hello [FILE]
-
-OPTIONS
-  -f, --force
-  -h, --help       show CLI help
-  -n, --name=name  name to print
-
-EXAMPLE
-  $ enso hello
-  hello world from ./src/hello.ts!
+```bash
+enso controller -d [domain] -t [http|websocket]
 ```
 
-_See code: [src/commands/hello.ts](https://github.com/1a35e1/cli/blob/v0.7.5/src/commands/hello.ts)_
-
-## `enso help [COMMAND]`
-
-display help for enso
-
-```
-USAGE
-  $ enso help [COMMAND]
-
-ARGUMENTS
-  COMMAND  command to show help for
-
-OPTIONS
-  --all  see all commands in CLI
+```bash
+enso entity [name]
 ```
 
-_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.2.1/src/commands/help.ts)_
-<!-- commandsstop -->
+```bash
+enso service [name] -d [domain]
+```
