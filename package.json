@@ -18,7 +18,7 @@
     "@babel/core": "7.8.7",
     "@babel/plugin-proposal-class-properties": "7.8.3",
     "@babel/preset-typescript": "7.8.3",
-    "@changesets/cli": "2.6.1",
+    "@changesets/cli": "2.6.5",
     "@manypkg/cli": "0.11.1",
     "@preconstruct/cli": "1.1.8",
     "bolt": "0.24.5",
