@@ -1552,10 +1552,10 @@
   dependencies:
     "@types/node" "^12.11.1"
 
-"@preconstruct/cli@1.1.8":
-  version "1.1.8"
-  resolved "https://registry.yarnpkg.com/@preconstruct/cli/-/cli-1.1.8.tgz#f74f580e79edab2449f853fdbdf1601f1537ee3b"
-  integrity sha512-Mg8aROwDrVS/NKIM25CFUmalgvT21Et/IskrFrK3A26EIhxOyXArooYzMPZVwIxNryPYh8L9a2tLIUpVZTboMA==
+"@preconstruct/cli@1.1.12":
+  version "1.1.12"
+  resolved "https://registry.yarnpkg.com/@preconstruct/cli/-/cli-1.1.12.tgz#20bae3ac0740cac4452416aeb41330ad785a3af6"
+  integrity sha512-QEhF+JY+gHPXAthp/OMS4UyGH8Ncj5AlH9U3a6DDYVeCxP8kGXty8smQfcJW9U3ITrkDdeqgsHVWxHrbEsmjrQ==
   dependencies:
     "@babel/code-frame" "^7.5.5"
     "@babel/core" "^7.7.7"
