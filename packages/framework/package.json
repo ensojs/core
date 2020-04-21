@@ -1,6 +1,6 @@
 {
   "name": "@ensojs/framework",
-  "version": "0.10.0",
+  "version": "0.11.0",
   "description": "Base packages for the Enso framework",
   "scripts": {
     "test": "jest --detectOpenHandles",
