@@ -1,6 +1,11 @@
-import { Connection } from 'typeorm'
+import { Container } from 'inversify'
+import http from 'http'
+import Koa from 'koa'
 
-export interface IEnsoServer {
-  setConnection (connection: Connection): void
+export interface DefaultServer {
+  build (container: Container): Promise<Koa>
+  getInjectionContainer (): Container
+  start (): Promise<http.Server>
+  stop (): Promise<void>
 }
 

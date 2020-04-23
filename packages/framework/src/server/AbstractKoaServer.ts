@@ -8,11 +8,14 @@ import Debug from 'debug'
 
 import { IEnvironmentConfig } from '../env'
 import { TYPE } from '../bindings'
+import { DefaultServer } from './interfaces'
 
 const debug = Debug('enso:AbstractKoaServer')
 
-export abstract class AbstractKoaServer {
-
+export abstract class AbstractKoaServer implements DefaultServer {
+  /**
+   * Instance of Koa
+   */
   koa: Koa | undefined
 
   server: Server | undefined
@@ -55,7 +58,10 @@ export abstract class AbstractKoaServer {
     }
   }
 
-  async build (container: Container): Promise<Koa> {
+  /**
+   * Build the server
+   */
+  public async build (container: Container): Promise<Koa> {
 
     this.listRegisteredBindings(container)
 
@@ -85,7 +91,7 @@ export abstract class AbstractKoaServer {
     return this.server
   }
 
-  public async stop () {
+  public async stop (): Promise<void> {
     // Gracefully close any open connections
     if (this.connections.length > 0) {
       this.connections.map(o =>o.close())

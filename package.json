@@ -34,7 +34,6 @@
     "pkgs:fix": "yarn manypkg fix",
     "pkgs:build": "yarn preconstruct build",
     "changes": "yarn changeset",
-    "version": "yarn changeset version",
     "publish": "yarn changeset publish"
   },
   "dependencies": {
