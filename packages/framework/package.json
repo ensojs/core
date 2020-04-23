@@ -1,10 +1,11 @@
 {
   "name": "@ensojs/framework",
-  "version": "0.11.3",
+  "version": "0.12.4",
   "description": "Base packages for the Enso framework",
   "scripts": {
     "test": "jest --detectOpenHandles",
-    "build": "rm -rf dist && tsc -b tsconfig.release.json"
+    "build": "rm -rf dist && tsc -b tsconfig.release.json",
+    "release": "yarn version && yarn build && npm publish"
   },
   "keywords": [
     "nodejs",
@@ -18,9 +19,8 @@
     "access": "public"
   },
   "author": "1a35e1@protonmail.com",
-  "main": "dist/framework.cjs.js",
-  "module": "dist/framework.esm.js",
-  "types": "dist/index.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.js",
   "license": "MIT",
   "dependencies": {
     "@koa/cors": "^3.0.0",

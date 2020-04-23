@@ -32,28 +32,16 @@
     "clean": "bash scripts/clean.sh",
     "pkgs:lint": "yarn manypkg check",
     "pkgs:fix": "yarn manypkg fix",
-    "pkgs:build": "yarn preconstruct build",
     "changes": "yarn changeset",
     "publish": "yarn changeset publish"
   },
   "dependencies": {
-    "@babel/cli": "7.8.4",
-    "@babel/core": "7.8.7",
-    "@babel/plugin-proposal-class-properties": "7.8.3",
-    "@babel/preset-typescript": "7.8.3",
     "@changesets/cli": "2.6.1",
     "@manypkg/cli": "0.11.1",
-    "@preconstruct/cli": "1.1.8",
-    "bolt": "0.24.5",
     "cz-conventional-changelog": "3.1.0",
     "husky": "4.2.3",
     "typescript": "3.7.2",
     "validate-commit-msg": "2.14.0"
-  },
-  "preconstruct": {
-    "packages": [
-      "packages/*"
-    ]
   },
   "config": {
     "commitizen": {
