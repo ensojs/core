@@ -2,9 +2,9 @@ import 'reflect-metadata'
 
 import Koa from 'koa'
 import { Container, injectable } from 'inversify'
-import { IEnvironmentConfig, AbstractKoaServer, bodyparser, TYPE } from '../..'
 import { interfaces, controller, httpGet } from 'inversify-koa'
 import { RouterContext } from 'koa-router'
+import { TYPE, IEnvironmentConfig, AbstractKoaServer, bodyparser } from '../../src/index'
 
 @injectable()
 @controller('/')

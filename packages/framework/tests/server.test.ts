@@ -1,7 +1,7 @@
 import net from 'net'
 
 import { Application, env, container } from './utils/app.default'
-import { AbstractKoaServer } from '../server'
+import { AbstractKoaServer } from '../src/server'
 
 describe('server', () => {
 
@@ -12,8 +12,6 @@ describe('server', () => {
   })
 
   test('should listen on supplied port', async () => {
-    env.PORT = 5432
-
     const app = new Application(env)
     await app.build(container)
     const server = await app.start()
