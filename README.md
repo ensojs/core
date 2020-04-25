@@ -2,6 +2,8 @@
 
 A Typescript framework for building backend services
 
+> Note: This is an experimental package and subject to change
+
 ## Documentation
 
 [https://ensojs.netlify.com/](https://ensojs.netlify.com/)
@@ -24,10 +26,3 @@ We use [changesets](https://github.com/atlassian/changesets) to coordinate relea
 
 1. Fork the repository
 2. Create a branch with the relevant converntional changelog prefix. eg `feat/your-branch`, `fix/your-branch` etc. Check which [prefixes are enabled](./package.json).
-
-## Philosophy
-
-Enso seeks to create a balanced respectful community informed by classical Software Architecture and Programming principles. eg. `Gang of Four` patterns such as Repositories, Factories and et. al in addition to modern `"enterprise"` approaches such as Domain Driven Design.
-
-- We also [openly acknowledge and give credit](CREDITS.md) to the developers work we leverage
-- Also please feel free to checkout the package [imprint])(<https://ensojs.netlify.com/installation/packages.html>)

@@ -8,11 +8,16 @@ import Debug from 'debug'
 
 import { IEnvironmentConfig } from '../env'
 import { TYPE } from '../bindings'
-import { DefaultServer } from './interfaces'
+import { BaseServer, GlobalMiddleware } from './interfaces'
 
-const debug = Debug('enso:AbstractKoaServer')
+const debug = Debug('enso:KoaServer')
 
-export abstract class AbstractKoaServer implements DefaultServer {
+function implementsGlobalMiddleware(object: any): object is GlobalMiddleware {
+  return 'middleware' in object;
+}
+
+
+export class KoaServer implements BaseServer {
   /**
    * Instance of Koa
    */
@@ -27,11 +32,6 @@ export abstract class AbstractKoaServer implements DefaultServer {
   constructor (
     public env: IEnvironmentConfig
   ) {}
-
-  /**
-   * Force middleware to be declared
-   */
-  abstract applyMiddleware (koa: Koa, container: Container): void
 
   private listBindings (bindings: any) {
     for (const index in bindings) {
@@ -67,9 +67,11 @@ export abstract class AbstractKoaServer implements DefaultServer {
 
     const koa = new InversifyKoaServer(container)
 
-    // TODO: FIX TYPINGS
-    // @ts-ignore
-    koa.setConfig(koa => this.applyMiddleware(koa, container))
+    // implements GlobalMiddleware
+    if (implementsGlobalMiddleware(this)) {
+      koa.setConfig((app) => this['middleware'](app, container))
+    }
+
     // @ts-ignore
     this.koa = koa.build()
 

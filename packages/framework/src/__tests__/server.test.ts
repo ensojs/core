@@ -1,14 +1,13 @@
 import net from 'net'
-
-import { Application, env, container } from './utils/app.default'
-import { AbstractKoaServer } from '../src/server'
+import { Application, env, container } from '../__tests__/utils/app.default'
+import { KoaServer } from '../server/KoaServer'
 
 describe('server', () => {
 
   test('should create a Koa server', async () => {
     const app = new Application(env)
     await app.build(container)
-    expect(app).toBeInstanceOf(AbstractKoaServer)
+    expect(app).toBeInstanceOf(KoaServer)
   })
 
   test('should listen on supplied port', async () => {

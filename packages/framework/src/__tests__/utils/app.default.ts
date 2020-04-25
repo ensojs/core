@@ -1,10 +1,13 @@
 import 'reflect-metadata'
 
-import Koa from 'koa'
 import { Container, injectable } from 'inversify'
 import { interfaces, controller, httpGet } from 'inversify-koa'
 import { RouterContext } from 'koa-router'
-import { TYPE, IEnvironmentConfig, AbstractKoaServer, bodyparser } from '../../src/index'
+
+import { TYPE } from '../../bindings'
+import { IEnvironmentConfig } from '../../env'
+import { getRandomPort } from '../../utils/getRandomPort'
+import { KoaServer } from '../../server/KoaServer'
 
 @injectable()
 @controller('/')
@@ -24,14 +27,11 @@ container.bind<interfaces.Controller>(TYPE.Controller).to(IndexController).whenT
 
 export const env: IEnvironmentConfig = {
   ENVIRONMENT: 'test',
-  PORT: 8888
+  PORT: getRandomPort()
 }
 
-export class Application extends AbstractKoaServer {
+export class Application extends KoaServer {
   constructor (env: IEnvironmentConfig) {
     super(env)
-  }
-  async applyMiddleware(koa: Koa, container: Container): Promise<void> {
-    koa.use(bodyparser())
   }
 }
