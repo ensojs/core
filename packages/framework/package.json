@@ -1,9 +1,9 @@
 {
   "name": "@ensojs/framework",
-  "version": "0.13.0",
+  "version": "0.14.0",
   "description": "Base packages for the Enso framework",
   "scripts": {
-    "test": "jest --detectOpenHandles",
+    "test": "jest --no-cache",
     "build": "rm -rf dist && tsc -b tsconfig.release.json"
   },
   "keywords": [
