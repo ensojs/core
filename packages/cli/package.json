@@ -14,7 +14,7 @@
   "dependencies": {
     "@oclif/command": "^1",
     "@oclif/config": "^1",
-    "@oclif/plugin-help": "^2",
+    "@oclif/plugin-help": "^3.0.0",
     "tslib": "1.10.0"
   },
   "devDependencies": {
