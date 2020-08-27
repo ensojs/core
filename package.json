@@ -38,7 +38,7 @@
   "dependencies": {
     "@changesets/cli": "2.6.1",
     "@manypkg/cli": "0.11.1",
-    "cz-conventional-changelog": "3.1.0",
+    "cz-conventional-changelog": "3.3.0",
     "husky": "4.2.3",
     "typescript": "3.7.2",
     "validate-commit-msg": "2.14.0"
