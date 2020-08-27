@@ -30,7 +30,7 @@
     "http": "^0.0.0",
     "inversify": "^5.0.1",
     "inversify-koa": "^1.0.3",
-    "jest": "25.3.0",
+    "jest": "25.5.4",
     "koa": "^2.5.3",
     "koa-bodyparser": "^4.2.1",
     "koa-helmet": "^5.0.0",
